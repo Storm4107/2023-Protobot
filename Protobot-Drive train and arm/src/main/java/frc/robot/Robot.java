@@ -178,57 +178,6 @@ SmartDashboard.putNumber("Not balance = 1", BalanceToggle);
  
     double currTime = Timer.getFPGATimestamp();
     double timeElapsed = currTime - autoStartTime; 
-    
-    
-    if (timeElapsed < 1.5) {
-      LeftArm.set(-.5);
-      RightArm.set(.5);
-    } else if (timeElapsed < 3.75) {
-      LeftArm.set(0);
-      RightArm.set(0);
-      Wrist.set(.5 );
-    } else if (timeElapsed < 4) {
-      Wrist.set(0);
-    } else if (timeElapsed < 5.1) {
-      this.ArmExtend.set(Value.kReverse);
-    } else if (timeElapsed < 5.5) {
-      this.WristClose.set(Value.kForward);
-    } else if (timeElapsed < 6) {
-      this.ArmExtend.set(Value.kForward);
-    } else if (timeElapsed < 6.5) {
-      this.WristClose.set(Value.kReverse);
-    } else if (timeElapsed < 7) {
-      Wrist.set(-.8);
-    } else if (timeElapsed < 8.5) {
-      Wrist.set(0);
-    }  else if (timeElapsed < 9.70) {
-      LeftArm.set(.5);
-      RightArm.set(-.5);
-    } else if (timeElapsed < 9.75) {
-      LeftArm.set(.0);
-      RightArm.set(-.0);
-    } else if (((RightEncoder.getDistance()* .0783) > -60) && (timeElapsed > 10)){
-      Rightmotor1.set(0.5);
-      Rightmotor2.set(0.5);
-    } else {
-      Rightmotor1.set(0);
-      Rightmotor2.set(0);
-    }
-    if (((LeftEncoder.getDistance()* .0783) > -60) && (timeElapsed > 10)) {
-      Leftmotor1.set(-0.5);
-      Leftmotor2.set(-0.5);
-    } else {
-      Leftmotor1.set(0);
-      Leftmotor2.set(0);
-    }
-
-
-
-
-
-    
-    
-
   }
 
   @Override
