@@ -173,7 +173,12 @@ SmartDashboard.putNumber("Not balance = 1", BalanceToggle);
 
   /** This function is called periodically during autonomous. 
    * @param RightFeet */
-  
+  @Override
+  public void autonomousPeriodic() {
+ 
+    double currTime = Timer.getFPGATimestamp();
+    double timeElapsed = currTime - autoStartTime; 
+  }
 
   @Override
   public void teleopInit() {
